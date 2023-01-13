@@ -11,3 +11,4 @@ def about(request):
 
 def service(request):
     return HttpResponse("this is the service page")
+
