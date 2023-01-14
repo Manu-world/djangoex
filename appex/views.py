@@ -9,4 +9,6 @@ def home(request):
 def about(request):
     return HttpResponse("this is the about page")
 
+def service(request):
+    return HttpResponse("this is the service page")
 
