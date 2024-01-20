@@ -1,16 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 # Create your views here.
 
-def home(request):
-    return HttpResponse("this is home, and url")
+def index(request):
+    return render(request, 'home.html')
 
-def about(request):
-    return HttpResponse("this is the about page")
-
-def service(request):
-    return HttpResponse("this is the service page")
-
-
+def counter(request):
+    words = request.POST.get("content")
+    num_of_words = len(words.split())
+    return render(request, 'count.html', {"content": num_of_words})
 

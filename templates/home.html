@@ -3,6 +3,9 @@
 
 
 {% block content%}
-    <h2>This is the home page</h2>
-    <a href="{% url 'about' %}"></a>
+    <form action="count" method="post">{% csrf_token %}
+        <textarea name="content" id="content" cols="30" rows="10"></textarea>
+        <input type="submit" value="submit">
+    </form>
+
 {% endblock%}

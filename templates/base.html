@@ -6,12 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li {% url 'home' %}>Home</li>
-            <li {% url 'about' %}>About</li>
-            <li {% url 'service' %}>Service</li>
-        </ul>
-    </nav>
+    {% block content %}
+
+    {% endblock %}
 </body>
 </html>
