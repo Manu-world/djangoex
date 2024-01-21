@@ -132,15 +132,21 @@
         <i class="bi bi-list mobile-nav-toggle d-none"></i>
       </nav><!-- .navbar -->
 
-      <a class="btn-getstarted scrollto" href="index.html#about">Get Started</a>
+
+      {% if user.is_authenticated %}
+      <a class="btn-getstarted scrollto" href="{% url 'logout' %}">Logout</a>
+      {% else %}
+      <a class="btn-getstarted scrollto" href="login">Login</a>
+      {% endif %}
+
 
     </div>
-  </header><!-- End Header -->
+  </header> <!-- End Header -->
 
   <section id="hero-animated" class="hero-animated d-flex align-items-center">
     <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative" data-aos="zoom-out">
       <img src="{% static 'assets/img/hero-carousel/hero-carousel-3.svg' %}" class="img-fluid animated">
-      <h2>Welcome to <span>HeroBiz</span></h2>
+      <h2>Welcome to <span>{% if user.is_authenticated %} {{user.username}} {% else %} HeroBiz {% endif %}</span></h2>
       <p>Et voluptate esse accusantium accusamus natus reiciendis quidem voluptates similique aut.</p>
       <div class="d-flex">
         <a href="#about" class="btn-get-started scrollto">Get Started</a>
