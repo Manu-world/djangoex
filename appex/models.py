@@ -2,9 +2,10 @@ from django.db import models
 
 # Create your models here.
 
-class Books(models.Model):
+class Book(models.Model):
     title = models.CharField(max_length=120)
-    details= models.TextField()
+    author = models.CharField(max_length=120)
+    price = models.FloatField(default=0.00)
 
 
     def __str__(self):
