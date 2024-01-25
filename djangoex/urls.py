@@ -16,11 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from appex.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('appex.urls')),
+    path('', include('todo.urls')),
     
 ]
 
