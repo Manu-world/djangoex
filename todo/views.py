@@ -31,8 +31,7 @@ def updateView(request, pk):
     if form.is_valid():
         form.save()
         return HttpResponseRedirect("/")
-
-
+    
     context["form"]=form
    
     return render(request, template, context)
