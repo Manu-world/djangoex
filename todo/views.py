@@ -8,13 +8,12 @@ def index(request):
     context = {}
     template = 'todo_home.html'
 
-    if request.method == 'POST':
-        form = TodoForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('index')
-    else:
-        form = TodoForm()
+    
+    form = TodoForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('index')
+
 
     context['Todos'] = Todo.objects.all
     context['form'] = form
