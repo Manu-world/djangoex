@@ -16,7 +16,6 @@ def index(request):
     else:
         form = TodoForm()
 
-
     context['Todos'] = Todo.objects.all
     context['form'] = form
     
