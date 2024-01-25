@@ -47,5 +47,4 @@ def deleteView(request, pk):
         return HttpResponseRedirect('/')
     
     context["todo"]= todo
-
     return render(request, template, context)
